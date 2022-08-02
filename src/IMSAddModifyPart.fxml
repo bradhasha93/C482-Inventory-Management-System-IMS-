@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import com.ims.content.ValidatedTextField?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="372.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button fx:id="saveBtn" layoutX="173.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleClick" prefHeight="31.0" prefWidth="90.0" text="Save" />
+      <Button fx:id="cancelBtn" layoutX="273.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleClick" prefHeight="31.0" prefWidth="90.0" text="Cancel" />
+      <RadioButton fx:id="inHouseBtn" layoutX="133.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleClick" selected="true" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="partSource" />
+         </toggleGroup>
+      </RadioButton>
+      <Label fx:id="mainLbl" layoutX="8.0" layoutY="6.0" text="Add Part">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="outsourcedBtn" layoutX="251.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleClick" text="Outsourced" toggleGroup="$partSource" />
+      <Label alignment="TOP_RIGHT" layoutX="93.0" layoutY="206.0" prefWidth="100.0" text="Price/Cost" />
+      <Label layoutX="273.0" layoutY="246.0" prefHeight="17.0" prefWidth="26.0" text="Min" />
+      <Label alignment="TOP_RIGHT" layoutX="93.0" layoutY="246.0" prefWidth="100.0" text="Max" />
+      <Label alignment="TOP_RIGHT" layoutX="93.0" layoutY="166.0" prefWidth="100.0" text="Inv" />
+      <Label alignment="TOP_RIGHT" layoutX="93.0" layoutY="126.0" prefWidth="100.0" text="Name" />
+      <Label alignment="TOP_RIGHT" layoutX="93.0" layoutY="86.0" prefWidth="100.0" text="ID" />
+      <Label fx:id="specialLbl" alignment="TOP_RIGHT" layoutX="93.0" layoutY="286.0" prefWidth="100.0" text="Machine ID" />
+      <TextField fx:id="idTxt" disable="true" layoutX="196.0" layoutY="86.0" text="AUTO-INCREMENT" />
+      <ValidatedTextField fx:id="nameTxt" layoutX="196.0" layoutY="126.0" minLength="1" maxLength="100" mask=".*" alertMsg="Field (Name) must be greater than or equal to 1 character."/>
+      <ValidatedTextField fx:id="invTxt" layoutX="196.0" layoutY="166.0" minLength="1" maxLength="20" mask="^[0-9]*$" alertMsg="Field (In Stock) can only accept integer values." />
+      <ValidatedTextField fx:id="priceCostTxt" layoutX="196.0" layoutY="206.0" minLength="1" maxLength="20" mask="(^\.[0-9]{0,2}$)|(^[0-9]*\.?[0-9]{0,2}$)" alertMsg="Field (Price/Cost) can only accept integer or double values." />
+      <ValidatedTextField fx:id="maxTxt" layoutX="196.0" layoutY="246.0" prefHeight="27.0" prefWidth="64.0" minLength="1" maxLength="4" mask="^[0-9]*$" alertMsg="Field (Max) can only accept integer values." />
+      <ValidatedTextField fx:id="minTxt" layoutX="299.0" layoutY="246.0" prefHeight="27.0" prefWidth="64.0" minLength="1" maxLength="4" mask="^[0-9]*$" alertMsg="Field (Min) can only accept integer values." />
+      <ValidatedTextField fx:id="specialTxt" layoutX="196.0" layoutY="286.0" minLength="1" maxLength="100" mask="^[0-9]*$" alertMsg="Field (Machine ID) can only accept integer values." />
+      <Group />
+   </children>
+</AnchorPane>
